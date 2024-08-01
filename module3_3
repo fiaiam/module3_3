@@ -1,0 +1,26 @@
+def print_params(a = 1, b = 'строка', c = True):
+    print(a, b, c)
+
+print('Функция с 1 аргументом:')    
+print_params(a = 2) #print_params с разным количеством аргументов, включая вызов без аргументов:
+print('Функция с 2-мя аргументами:')  
+print_params(4, 'four')
+print('Функция, вызванная без аргументов:')  
+print_params()
+
+print('Проверка условий:')
+print_params(b = 25) # работает
+print_params(c = [1,2,3]) # работает
+
+# Распаковка параметров
+values_list = [123, False, 'bool']
+values_dict = {'a': 'onetwothree', 'b': 1, 'c': True}
+
+print('Распаковка параметров:')
+print_params(*values_list)
+print_params(**values_dict)
+
+print('Проверка по условию:')
+values_list_2 = [1, 'one']
+print_params(*values_list_2, 42) # работает, потому что мы распаковываем элементы
+                                 # списка на места параметров функции
